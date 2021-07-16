@@ -1,0 +1,100 @@
+<html>
+
+<!-- Estilo CSS-->
+<header>
+	<style>
+		body {
+			background-color: slategrey;
+			font-family: Arial, Helvetica, sans-serif;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: large;
+		}
+
+		h2 {
+			font-size: medium;
+		}
+
+		form {
+			background-color: ivory;
+			max-width: 400px;
+			width: 70%;
+			padding: 10px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 5px;
+			text-align: center;
+		}
+
+		form input {
+			height: 35px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			margin: 5px 0;
+			text-align: center;
+			font-size: medium;
+		}
+
+		form input[type=submit] {
+			width: 25%;
+		}
+
+		form input[type=text] {
+			width: 10%;
+		}
+	</style>
+</header>
+
+<!-- Formulário -->
+
+<body>
+	<form>
+		<h2>Solução de uma equação do segundo grau.</h2>
+		<h3>Digite os valores dos coeficientes:</h3>
+		<div>
+			<input id="coef_a" type="text" inputmode="numeric" placeholder="a">x² +
+			<input id="coef_b" type="text" inputmode="numeric" placeholder="b">x +
+			<input id="coef_c" type="text" inputmode="numeric" placeholder="c"> = 0
+		</div>
+		<div>
+			<input class="solucao" onclick="solucao();" type="submit" value="Solução" />
+		</div>
+	</form>
+</body>
+
+<!-- JavaScript -->
+<script>
+	function mais(n) { //põe o sinal de + na frente do número
+		return (n >= 0 ? '+' : '') + n;
+	}
+	function solucao() { //calcula as raízes da equação
+		var a = document.getElementById("coef_a").value;
+		var b = document.getElementById("coef_b").value;
+		var c = document.getElementById("coef_c").value;
+		var x1 = 0;
+		var x2 = 0;
+		var delta = b ** 2 - 4 * a * c;
+		if (a == "" | b == "" | c == "") {
+			window.alert("Não deixe campos em branco!");
+		} else if (a == 0) {
+			window.alert("O coeficiente a não pode ser zero!");
+		} else {
+			if (delta == 0) {
+				x1 = -b / (2 * a);
+				window.alert("A equação " + a + "x²" + mais(b) + "x" + mais(c) + "=0 possui uma raiz: " + x1);
+			} else if (delta > 0) {
+				x1 = (-b + Math.sqrt(delta)) / 2 * a;
+				x2 = (-b - Math.sqrt(delta)) / 2 * a;
+				window.alert("A equação " + a + "x²" + mais(b) + "x" + mais(c) + "=0 possui duas raízes: " + x1 + " e " + x2);
+			} else {
+				window.alert("A equação " + a + "x²" + mais(b) + "x" + mais(c) + "=0 não tem solução real.");
+			}
+		}
+	}
+</script>
+
+</html>
