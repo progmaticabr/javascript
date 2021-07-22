@@ -1,9 +1,16 @@
 <html>
+
+<header>
 <style>
 p {font-family: Arial, Helvetica, sans-serif; font-size:large;}
 h1 {font-family: Arial, Helvetica, sans-serif; font-size:larger;}
 </style>
+</header>
+
+<body>
+    
 <h1>CALCULADORA DE SENO</h1>
+
 <script>
 
 
@@ -13,8 +20,15 @@ angulo_rad = angulo_grau * Math.PI / 180
 
 seno_angulo = Math.round(10000 * Math.sin(angulo_rad))/10000;
 
-document.write("<p>O seno de " + angulo_grau + "° é " + seno_angulo + "</p>");
+document.write(`<p>O seno de ${angulo_grau}° é ${seno_angulo} </p>`);
+
+var conf = confirm(`Quer prosseguir?`);
+alert(conf);
+
 
 
 </script>
+
+</body>
+
 </html>
