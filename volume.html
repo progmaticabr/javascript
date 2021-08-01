@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<script >
+
+var unidade = window.prompt('Digite a unidade usada nas medidas:');
+var comprimento = parseFloat(window.prompt('Digite o comprimento do palalelepípedo:'));
+var largura = parseFloat(window.prompt('Digite a largura do paralelepípedo:'));
+var altura = parseFloat(window.prompt('Digite a altura do paralelepípedo:'));
+var volume = comprimento*largura*altura;
+if(comprimento==largura && comprimento==altura){
+    tipo = 'cubo';
+} else {
+    tipo = 'paralelepípedo';
+}
+window.alert('O volume do '+tipo+' é de '+volume+' '+unidade+' cúbicos.');
+
+</script>
