@@ -1,0 +1,15 @@
+<script>
+
+function mais(n) { //põe o sinal de + na frente do número
+    return (n >= 0 ? '+' : '') + n;
+}
+
+var x1 = parseFloat(window.prompt("digitar x1"));
+var fx1 = parseFloat(window.prompt("digitar fx1"));
+var x2 = parseFloat(window.prompt("digitar x2"));
+var fx2 = parseFloat(window.prompt("digitar fx2"));
+var a = (fx2-fx1)/(x2-x1);
+var b = fx1 - a*x1;
+window.alert("sua função é f(x)="+a+"x"+mais(b));
+
+</script>
