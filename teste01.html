@@ -1,12 +1,17 @@
 <body>
 	<form>
 		<input type="text" id="coef_a">
-		<div id='saida'>
+		<br>
+		<input type="button" onclick="executa();" value="ok">
 	</form>
+	<div id="saida"></div>
 </body>
 
 <script>
-Function executa(){
-	var a = document.getElementById('coef_a');
-	document.getElementById('saida').innerHTML = a;
+function executa(){
+	var legenda = 'Resposta: ';
+	var a = parseInt(document.getElementById('coef_a').value);
+	var b = a**2-a;
+	document.getElementById('saida').innerHTML = legenda+b+' jogos';
+}
 </script>
