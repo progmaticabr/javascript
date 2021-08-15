@@ -1,14 +1,3 @@
-<body>
-	<h3>Quantidade de partidas em um campeonato de dois turnos<h3>
-	<form>
-		Digite a quantidade de clubes: <input type="text" id="clubes">
-		<input type="button" onclick="executa();" value="ok">
-	</form>
-	<div id="saida"></div>
-</body>
-
-
-
 <script>
 function executa(){
 	var legenda = 'Resposta: ';
@@ -17,3 +6,12 @@ function executa(){
 	document.getElementById('saida').innerHTML = legenda+b+' jogos';
 }
 </script>
+
+<body>
+	<h3>Quantidade de partidas em um campeonato de dois turnos<h3>
+	<form>
+		Digite a quantidade de clubes: <input type="text" id="clubes" >
+		<input type="button" onclick="executa();" value="ok">
+	</form>
+	<div id="saida"></div>
+</body>
