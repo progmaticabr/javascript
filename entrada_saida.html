@@ -1,0 +1,55 @@
+<html>
+
+<script>
+	function copiar(){
+	var texto = document.getElementById('texto1').value;
+	    if (texto != ''){
+			document.getElementById('saida').innerHTML = 'Você digitou: <b>'+texto+'</b>';
+	    } else {
+    	    document.getElementById('saida').innerHTML = 'Digite algo!';
+    	}
+    }
+</script>
+
+<body>
+<p>Trabalhar com os métodos <span style="color: red;">window.alert()</span> e 
+    <span style="color: red;">window.prompt()</span> para ler e exibir dados pode
+    ser bem fácil e prático, porém nada bonito. A ideia é sair o mais 
+    rápido possível disso e partir para os formulários, eventos e funções.
+    Mas como compreender esta abordagem logo de início, se não soubermos 
+    o que é um formulário, um evento ou até mesmo uma função?
+    Então, assim que soubermos criar uma função em JS, precisamos conhecer 
+    a <span style="color: red;">estrutura de um arquivo HTML</span>,
+    saber usar os elementos <span style="color: red;">&lt;form&gt;</span> , 
+    <span style="color: red;">&lt;input&gt;</span> 
+    e <span style="color: red;">&lt;div&gt;</span>, 
+    o evento <span style="color: red;">onclick</span> e o 
+    método&nbsp;<span style="color: red;">getElementById()</span>. 
+    Pronto! Sabendo estes detalhes, estaremos preparados para construir scripts muito mais amigáveis. 
+    Um próximo passo seria o "embelezamento" da nossa 
+    <a href="https://pt.wikipedia.org/wiki/Interface_do_utilizador" target="_blank">UI</a>, porém, 
+    fica como lição de casa estudar as folhas de estilo, ou <span style="color: red;">CSS</span>.</p>
+O formulário:
+<pre><code>&lt;form&gt;
+&#x9;&lt;input id=&apos;texto1&apos; type=&apos;text&apos; placeholder=&apos;texto inicial&apos;&gt;
+&#x9;&lt;input id=&apos;botao1&apos; type=&apos;button&apos; value=&apos;ok&apos;&gt;
+&#x9;&lt;div id=&apos;saida&apos;&gt;Mostra o resultado aqui!&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+O script:
+<pre><code>function copiar(){
+    var texto = document.getElementById('texto1').value;
+    if (texto != ''){
+        document.getElementById('saida').innerHTML = 'Você digitou: &lt;b&gt;&apos;+texto+&apos;&lt;/b&gt;&apos;;
+    } else {
+        document.getElementById('saida').innerHTML = 'Digite algo!';
+    }
+}
+</code></pre>
+<p>Como fica:</p><form>
+	<input id='texto1' type='text' placeholder='digite algo'>
+	<input id='botao1' type='button' value='ok' onclick='copiar();'>
+	<div id='saida'>Mostra o resultado aqui!</div>
+</form>
+</body>
+  
+</html>

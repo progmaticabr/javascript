@@ -1,0 +1,60 @@
+<style>
+    form {
+        background-color: moccasin;
+        max-width: 500px;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    form input {
+        height: 35px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 5px 0;
+        text-align: center;
+        font-size: medium;
+    }
+    
+    form input[type=submit] {
+        width: 40%;
+    }
+    
+    form input[type=number] {
+        width: 20%;
+    }
+    </style>
+    
+    
+    <div>
+    <form>
+        <input id='texto1' type='text' placeholder='texto inicial'>
+        <input id='botao1' type='button' value='ok'>
+        <div id='saida'>Mostra o resultado aqui!</div>
+    </form>
+</div>
+   
+<!-- PLUGIN BARRA DE COOKIES -->
+<script src='//rawcdn.githack.com/widget-s/cookie/ea70ac4989c61bb2075eb49360ccfd013217808b/cookieconsent.js'/>
+<script>
+window.addEventListener(&quot;load&quot;, function(){
+window.cookieconsent.initialise({
+&quot;palette&quot;: {
+&quot;popup&quot;: {
+&quot;background&quot;: &quot;#3C4042&quot;
+},
+&quot;button&quot;: {
+&quot;background&quot;: &quot;#f04c25&quot;
+}
+},
+
+&quot;content&quot;: {
+&quot;message&quot;: &quot;Este blog usa cookies do Google personalizar anúncios e analisar. Isso é feito para garantir que você tenha a melhor experiência.&quot;,
+&quot;dismiss&quot;: &quot;Eu aceito!&quot;,
+&quot;link&quot;: &quot;Veja a Política de privacidade&quot;,
+&quot;href&quot;: &quot;/&quot;
+}
+})});
+</script>
+<!-- FINAL DO PLUGIN -->

@@ -1,0 +1,23 @@
+<html>
+
+<script>
+        function solucao() {
+            var a = parseFloat(document.getElementById("valor1").value);
+    		var b = parseFloat(document.getElementById("valor2").value);
+            document.getElementById("soma").value=a+b;
+            document.getElementById("soma").value=""
+
+        }
+</script>
+
+<body>
+    <form>
+        <input id="valor1" placeholder="valor 1">
+        <input type="button" value="+" onclick="solucao();">
+        <input id="valor2" placeholder="valor 2"> = 
+        <input id="soma" placeholder="soma" readonly>
+
+    </form>
+</body>
+
+</html>
