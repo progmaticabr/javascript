@@ -1,0 +1,22 @@
+<script>
+    function executa(){
+        var hipotenusa Number;
+        var lado1 = parseInt(document.getElementById('lado1').value);
+        var lado2 = parseInt(document.getElementById('lado2').value);
+        var lado3 = parseInt(document.getElementById('lado3').value);
+        document.getElementById('saida').innerHTML = hipo+b+' jogos';
+    }
+    </script>
+    
+    <body>
+        <h3>Geração de triângulo retângulo.</h3>
+        <form>
+            Digite o comprimento de, pelo menos, dois lados do triângulo retângulo: <br>
+            <input type="text" id="lado1" inputmode="numeric">
+            <input type="text" id="lado2" inputmode="numeric">
+            <input type="text" id="lado3" inputmode="numeric"><br>
+            <input type="button" onclick="executa();" value="gerar">
+        </form>
+        <div id="saida"></div>
+    </body>
+    
