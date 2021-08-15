@@ -1,22 +1,36 @@
+<style>
+    body {
+        font: normal small Arial;
+        line-height: 2.0;
+    }
+    form {
+        background-color: moccasin;
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>
+
 <script>
-    function executa(){
-        var hipotenusa Number;
+    function calcular(tipo) {
+        var hipo = 0;
         var lado1 = parseInt(document.getElementById('lado1').value);
         var lado2 = parseInt(document.getElementById('lado2').value);
-        var lado3 = parseInt(document.getElementById('lado3').value);
-        document.getElementById('saida').innerHTML = hipo+b+' jogos';
+        var lado3;
+        if (tipo == 'hipo') lado3 = Math.sqrt(lado1 ** 2 + lado2 ** 2);
+        else lado3 = Math.sqrt(Math.abs(lado1 ** 2 - lado2 ** 2));
+        document.getElementById('lado3').value = lado3;
     }
-    </script>
-    
-    <body>
-        <h3>Geração de triângulo retângulo.</h3>
-        <form>
-            Digite o comprimento de, pelo menos, dois lados do triângulo retângulo: <br>
-            <input type="text" id="lado1" inputmode="numeric">
-            <input type="text" id="lado2" inputmode="numeric">
-            <input type="text" id="lado3" inputmode="numeric"><br>
-            <input type="button" onclick="executa();" value="gerar">
-        </form>
-        <div id="saida"></div>
-    </body>
-    
+</script>
+
+<body>
+    <h3>Geração de triângulo retângulo.</h3>
+    <form>
+        Digite o comprimento de dois lados de um triângulo retângulo: <br>
+        Lado 1: <input type="text" id="lado1" inputmode="numeric"><br>
+        Lado 2: <input type="text" id="lado2" inputmode="numeric"><br>
+        Determinar lado 3:<br>
+        <input type="button" onclick="calcular('hipo');" value="Hipotenusa"> ou 
+        <input type="button" onclick="calcular('cateto');" value="Cateto"><br>
+        Lado 3: <input type="text" id="lado3" inputmode="numeric" readonly>
+    </form>
+</body>
