@@ -1,6 +1,7 @@
 <body>
+	<h3>Quantidade de partidas em um campeonato de dois turnos<h3>
 	<form>
-		<input type="text" id="coef_a">
+		<input type="text" id="clubes">
 		<br>
 		<input type="button" onclick="executa();" value="ok">
 	</form>
@@ -10,7 +11,7 @@
 <script>
 function executa(){
 	var legenda = 'Resposta: ';
-	var a = parseInt(document.getElementById('coef_a').value);
+	var a = parseInt(document.getElementById('clubes').value);
 	var b = a**2-a;
 	document.getElementById('saida').innerHTML = legenda+b+' jogos';
 }
