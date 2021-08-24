@@ -1,0 +1,36 @@
+<html>
+
+<style>
+    body {
+        font: normal small Arial;
+        line-height: 2.0;
+    }
+    form {
+        background-color: moccasin;
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>
+
+<script>
+    function calcular() {
+        var n = parseFloat(document.getElementById('n').value);
+        var x = 0
+        while (x ** x < n) {
+            x = x + 0.000002;
+        }
+        x = Math.round(x * 10000) / 10000;
+        document.getElementById('x').value = x;
+    }
+</script>
+
+<body>
+    <h1>EQUAÇÃO AUTO EXPONENCIAL</h1>
+    <form>
+        x^x=<input type="text" id="n" inputmode="numeric" placeholder="n"><br>
+        <input type="button" onclick="calcular('n');" value="Calcular"><br>
+        x=<input type="text" id="x" readonly>
+    </form>
+</body>
+
+</html>
