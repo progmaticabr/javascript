@@ -1,0 +1,68 @@
+<style>
+    body {
+        font: normal small Arial;
+        line-height: 2.0;
+    }
+    form {
+        background-color: moccasin;
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>
+
+<script>
+
+function mais(n) {                          //põe o sinal + na frente do número
+    return (n >= 0 ? '+' : '') + n;
+}
+
+function gerar() {
+    var x1 = parseFloat(document.getElementById('x1').value);
+    var y1 = parseFloat(document.getElementById('y1').value);
+    var x2 = parseFloat(document.getElementById('x2').value);
+    var y2 = parseFloat(document.getElementById('y2').value);
+    var x3 = parseFloat(document.getElementById('x3').value);
+    var y3 = parseFloat(document.getElementById('y3').value);
+
+    // utilização da regra de Cramer para determinação dos coeficientes
+    var D  = x1**2*x2 +x2**2*x3 +x3**2*x1 -x1**2*x3 -x2**2*x1 -x3**2*x2;
+    var Da = x1*y3 +x2*y1 +x3*y2 -x1*y2 -x2*y3 -x3*y1;
+    var Db = x1**2*y2 +x2**2*y3 +x3**2*y1 -x1**2*y3 -x2**2*y1 -x3**2*y2;
+    var Dc = x1**2*x2*y3 +x2**2*x3*y1 +x3**2*x1*y2 -x1**2*x3*y2 -x2**2*x1*y3 -x3**2*x2*y1;
+
+    if(D!=0 && Da!=0){ 
+        // cálculo final dos coeficientes
+        var a = Math.round(10000 * Da/D)/10000;
+        var b = Math.round(10000 * Db/D)/10000;
+        var c = Math.round(10000 * Dc/D)/10000;
+        // ignora, se a ou b forem 1
+        if(a==1)  a = '';
+        if(a==-1) a = '-';
+        if(b==1)  b = '';
+        if(b==-1) b = '-';
+        // monta a lei da função
+        document.getElementById('equacao').value = a+'x²'+(b==0?'':mais(b)+'x')+(c==0?'':mais(c)); // operador ternário muito útil
+    } else {
+        document.getElementById('equacao').value ='isso não é uma parábola!';
+    }
+}
+
+</script>
+
+<body>
+    <h3>Determinação de uma função quadrática a partir de 3 pontos.</h3>
+    <form>
+        Digite três pontos distintos que pertençam a uma parábola: <br>
+        (<input type="text" id="x1" inputmode="numeric" placeholder="x1">),
+        (<input type="text" id="y1" inputmode="numeric" placeholder="y1">)<br>
+        (<input type="text" id="x2" inputmode="numeric" placeholder="x2">),
+        (<input type="text" id="y2" inputmode="numeric" placeholder="y2">)<br>
+        (<input type="text" id="x3" inputmode="numeric" placeholder="x3">),
+        (<input type="text" id="y3" inputmode="numeric" placeholder="y3">)<br>
+        <input type="button" onclick="gerar();" value="Gerar"><br>
+        f(x)=<input type="text" id="equacao" readonly>
+    </form>
+
+    
+</body>
+
